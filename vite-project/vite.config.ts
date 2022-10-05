@@ -5,16 +5,12 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import Components from 'unplugin-vue-components/vite'
 import {
   AntDesignVueResolver,
-  ElementPlusResolver,
-  VantResolver,
 } from 'unplugin-vue-components/resolvers'
 
 // your plugin installation
 Components({
   resolvers: [
     AntDesignVueResolver(),
-    ElementPlusResolver(),
-    VantResolver(),
   ],
 })
 // https://vitejs.dev/config/
