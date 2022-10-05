@@ -5,7 +5,7 @@ export const App = defineComponent({
         return () => {
             return (
                 <div>
-                    <App />
+                    <div>123</div>
                 </div>
             )
         }
