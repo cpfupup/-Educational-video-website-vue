@@ -1,7 +1,12 @@
 import { defineComponent } from 'vue'
-import {Button} from 'ant-design-vue'
+import { Button } from 'ant-design-vue'
+import { MenuSetting } from './components/menu/menu'
 export default defineComponent({
-    setup() {
-        return () => <Button type="dashed">1234</Button> //写一个 hello world祭天
-    }
+  setup() {
+    return () => (
+      <div>
+        <MenuSetting />
+      </div>
+    )
+  }
 })
