@@ -15,6 +15,7 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^2.0.1",
     "ant-design-vue": "^3.2.13",
+    "pinia": "^2.0.23",
     "storybook": "^6.5.12",
     "vue": "^3.2.37"
   },
