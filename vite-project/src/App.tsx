@@ -1,17 +1,7 @@
 import { defineComponent } from 'vue'
-import { Button } from 'ant-design-vue'
-import { Menus } from './module/menu/menu.tsx'
 
-export const App = defineComponent({
+export default defineComponent({
     setup() {
-        return () => {
-            return (
-                <div>
-                    <Button type="primary">hello</Button>
-                    <Menus>123</Menus>
-
-                </div>
-            )
-        }
-    },
-});
+        return () => <div>hello world</div> //写一个 hello world祭天
+    }
+})
