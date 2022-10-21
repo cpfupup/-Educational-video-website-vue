@@ -1,18 +1,66 @@
 import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
-// import Components from 'unplugin-vue-components/vite';
-
-// import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
-
+import styleImport from 'vite-plugin-style-import';
+import path from 'path';
 // https://vitejs.dev/config/
+import Components from 'unplugin-vue-components/vite'
+import {
+  AntDesignVueResolver,
+  ElementPlusResolver,
+  VantResolver,
+} from 'unplugin-vue-components/resolvers'
+
+// your plugin installation
+Components({
+  resolvers: [
+    AntDesignVueResolver(),
+    ElementPlusResolver(),
+    VantResolver(),
+  ],
+})
 export default defineConfig({
+  resolve: {
+    alias: {
+      // 别名
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {
+          // 全局less变量
+          hack: `true; @import (reference) "${path.resolve(
+            'src/style/global.less'
+          )}";`,
+        },
+        javascriptEnabled: true,
+      },
+    },
+  },
+
   plugins: [
     vue(),
-    vueJsx(),
-    // Components({
-    //   resolvers: [AntDesignVueResolver()],
-    // })
+    vueJsx({
+      transformOn: true,
+      mergeProps: true,
+    }),
+    Components({
+      resolvers: [AntDesignVueResolver()],
+    }),
+    // styleImport({
+    //   libs: [
+    //     {
+    //       libraryName: 'ant-design-vue',
+    //       esModule: true,
+    //       resolveStyle: (name) => {
+    //         return `ant-design-vue/es/${name}/style/index`;
+    //       },
+    //     },
+    //   ],
+    // }),
+
   ],
 
 })
