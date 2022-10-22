@@ -1,8 +1,11 @@
 import { defineComponent, ref } from 'vue';
-import { Menu, Avatar,Switch,MenuTheme } from 'ant-design-vue';
+import { Menu, Avatar, Space, Input } from 'ant-design-vue';
+import lylogo from '../../assets/ly.png'
+import style from './menu.module.css'
 export const MenuSetting = defineComponent({
     setup() {
-        const items = [
+        const { Search } = Input;
+        const items = [//这里为什么不能用ref？
             { label: '首页', key: 'item-1' }, // 菜单项务必填写 key
             {
                 label: '我的学习',
@@ -11,7 +14,6 @@ export const MenuSetting = defineComponent({
                     { label: '文章阅读', key: 'submenu-item-2-1' },
                     { label: '视频学习', key: 'submenu-item-2-2' },
                     { label: '我的收藏', key: 'submenu-item-2-3' },
-                    { label: '学习记录', key: 'submenu-item-2-4' },
                     { label: '我要投稿', key: 'submenu-item-2-5' }
                 ],
             },
@@ -25,27 +27,24 @@ export const MenuSetting = defineComponent({
 
 
         ];
-        const [theme, setTheme] = Ref<MenuTheme>('dark');
-        const changeTheme = (value: boolean) => {
-            setTheme(value ? 'dark' : 'light');
-          };
+        // const [theme, setTheme] = ref<MenuTheme>('dark');
         return () => {
 
             return (
-                <div>
-                    <Switch
-                        checked={theme === 'dark'}
-                        onChange={changeTheme}
-                        checkedChildren="Dark"
-                        unCheckedChildren="Light"
+                <div class={style.header}>
+                    <img src={lylogo} alt="" class={style.lylogo} />
+                    <Menu class={style.menu} items={items}
+                        mode="horizontal"
                     />
-                    <Menu items={items} mode="horizontal" theme={theme}
-                        onClick={onClick}
-                    />
+                    <div class={style.logIn}>登陆/注册</div>
                     <Avatar
-                        size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-                        icon={<AntDesignOutlined />}
+                        class={style.avatar}
+                        size={46}
+                        gap={40}
                     />
+                    <Space direction="vertical" class={style.search}>
+                        <Search placeholder="input search text" enterButton />
+                    </Space>
                 </div>
             )
         }
