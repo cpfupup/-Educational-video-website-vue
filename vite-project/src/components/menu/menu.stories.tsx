@@ -11,9 +11,6 @@ export default {
 export const Normal = () =>
 
     defineComponent({
-        // component: MenuSetting,
-
-        // const MenuSetting 
         setup() {
             return () => (
                 <div>
