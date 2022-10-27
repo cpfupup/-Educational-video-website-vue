@@ -1,7 +1,10 @@
 import { Button, Modal, Input, Form, Checkbox } from "ant-design-vue";
+import {
+  UserOutlined
+} from '@ant-design/icons-vue';
 import { defineComponent, ref } from "vue";
 import style from './login.module.css'
-
+// import { routerViewLocationKey } from "vue-router";
 export const LoginSetting = defineComponent({
   setup() {
     //窗口弹出逻辑
@@ -18,7 +21,7 @@ export const LoginSetting = defineComponent({
     const handleCancel = () => {
       visible.value = false;
     };
-    
+
     //表单逻辑
     const onFinish = (values: any) => {
       console.log('Received values of form: ', values);
@@ -49,7 +52,8 @@ export const LoginSetting = defineComponent({
                 name="username"
                 rules={[{ required: true, message: 'Please input your Username!' }]}
               >
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                <Input prefix={//引入了但是没效果
+                  <UserOutlined className="site-form-item-icon" />} placeholder="Username" />
               </Form.Item>
               <Form.Item
                 name="password"

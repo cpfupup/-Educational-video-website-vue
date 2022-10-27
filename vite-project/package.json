@@ -13,6 +13,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@vitejs/plugin-vue-jsx": "^2.0.1",
     "add": "^2.0.6",
     "ant-design-vue": "^3.3.0-beta.3",
