@@ -5,30 +5,24 @@ import style from './login.module.css'
 export const LoginSetting = defineComponent({
   setup() {
     //窗口弹出逻辑
-    const modalText = ref<string>('Content of the modal');
     const visible = ref<boolean>(false);
-    const confirmLoading = ref<boolean>(false);
+
     const showModal = () => {
       visible.value = true;
     };
 
-    const handleOk = () => {
-      modalText.value = 'The modal will be closed after two seconds';
-      confirmLoading.value = true;
-      setTimeout(() => {
-        visible.value = false;
-        confirmLoading.value = false;
-      }, 2000);
+    const handleOk = (e: MouseEvent) => {
+      console.log(e);
+      visible.value = false;
     };
     const handleCancel = () => {
-      console.log('Clicked cancel button');
-      confirmLoading.value = false;
+      visible.value = false;
     };
-
+    
+    //表单逻辑
     const onFinish = (values: any) => {
       console.log('Received values of form: ', values);
     };
-
     return () => {
       return (
         <>
@@ -40,9 +34,11 @@ export const LoginSetting = defineComponent({
             visible={visible.value}
             footer={false}
             onOk={handleOk}
-            confirmLoading={confirmLoading.value}
-            // onCancel={handleCancel}
+            keyboard={true}
+            maskClosablemaskClosable
+            onCancel={handleCancel}
           >
+            {/* 表单开始 */}
             < Form
               name="normal_login"
               class={style.loginForm}
@@ -83,7 +79,6 @@ export const LoginSetting = defineComponent({
               </Form.Item>
             </Form>
             {/* 这里表单内容结束 */}
-            <p>{modalText}</p>
           </Modal>
         </>
       )
