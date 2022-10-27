@@ -1,15 +1,8 @@
-import { defineComponent, reactive, ref } from 'vue';
-import { Menu, Avatar, Input, AutoComplete, SelectProps } from 'ant-design-vue';
+import { defineComponent, ref } from 'vue';
+import { Menu, Avatar, Input, AutoComplete } from 'ant-design-vue';
+import { LoginSetting } from '../login/login';
 import lylogo from '../../assets/ly.png'
 import style from './menu.module.css'
-
-
-interface Option {
-    query?: string;
-    category?: string;
-    value?: string;
-    count?: number;
-}
 
 export const MenuSetting = defineComponent({
 
@@ -40,7 +33,6 @@ export const MenuSetting = defineComponent({
         const value = ref('');
         const dataSource = ref<Option[]>([]);
         const onSelect = (value: any) => {
-            console.log('onSelect', value);
         };
         const getRandomInt = (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
         const searchResult = (query: string) =>
@@ -76,8 +68,7 @@ export const MenuSetting = defineComponent({
 
         const handleSearch = (value: string) => {
             dataSource.value = value ? searchResult(value) : [];
-            console.log(searchResult(value));
-            
+
         };
         //到这里搜索框逻辑结束
 
@@ -88,7 +79,12 @@ export const MenuSetting = defineComponent({
                     <Menu class={style.menu} items={items}
                         mode="horizontal"
                     />
-                    <div class={style.logIn}>登陆/注册</div>
+
+                    {/* 这里是登陆页面，后续需要添加登陆判断 */}
+                    <LoginSetting class={style['logIn']}></LoginSetting>
+                    {/* 登陆结束 */}
+
+
                     <Avatar
                         class={style.avatar}
                         size={46}
@@ -100,13 +96,14 @@ export const MenuSetting = defineComponent({
                         class={style.search}
                         // dropdownMatchSelectWidth={252}
                         // style={{ width: 300 }}
-                        options={dataSource}
+                        options={dataSource.value}
                         onSelect={onSelect}
                         onSearch={handleSearch}
                     >
-                        <Search size="large" class={style.search} placeholder="input here" enterButton />
+                        <Search size="large" class={style.search} placeholder="请输入搜索内容" enterButton />
                     </AutoComplete>
                     {/* 展示结束 */}
+
                 </div>
             )
         }

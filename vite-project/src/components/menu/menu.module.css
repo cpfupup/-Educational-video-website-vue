@@ -15,15 +15,9 @@
     height: 47px;
 }
 
-.logIn {
-    float: right;
-    margin: 0 30px;
-    line-height: 46px;
-}
-
 .search {
     float: right;
-    margin: 7px 20px;
+    margin: 5px 20px;
 }
 
 .avatar {
