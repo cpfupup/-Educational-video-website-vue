@@ -15,11 +15,9 @@
       "DOM"
     ],
     "skipLibCheck": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "*"
-      ],
+      "@/*": ["src/*"] // 相对位置需要配置baseUrl才能识别，否则会报错
     }
   },
   "include": [
@@ -32,5 +30,5 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
 }
