@@ -1,17 +1,18 @@
-import { defineComponent, ref } from 'vue';
-import { Menu, Avatar, Input, AutoComplete } from 'ant-design-vue';
+import { defineComponent, reactive, ref } from 'vue';
+import { Menu, Avatar, Input, AutoComplete, SelectProps } from 'ant-design-vue';
 import lylogo from '../../assets/ly.png'
 import style from './menu.module.css'
 
 
 interface Option {
-    query: string;
-    category: string;
-    value: string;
-    count: number;
+    query?: string;
+    category?: string;
+    value?: string;
+    count?: number;
 }
 
 export const MenuSetting = defineComponent({
+
     setup() {
         const { Search } = Input;
         const items = [//这里为什么不能用ref？
@@ -41,13 +42,7 @@ export const MenuSetting = defineComponent({
         const onSelect = (value: any) => {
             console.log('onSelect', value);
         };
-        const handleSearch = (val: string) => {
-            dataSource.value = val ? searchResult(val) : [];
-        };
-        const getRandomInt = (max: number, min = 0) => {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        };
-
+        const getRandomInt = (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
         const searchResult = (query: string) =>
             new Array(getRandomInt(5))
                 .join('.')
@@ -79,12 +74,14 @@ export const MenuSetting = defineComponent({
                     };
                 });
 
-
-
+        const handleSearch = (value: string) => {
+            dataSource.value = value ? searchResult(value) : [];
+            console.log(searchResult(value));
+            
+        };
         //到这里搜索框逻辑结束
 
         return () => {
-
             return (
                 <div class={style.header}>
                     <img src={lylogo} alt="" class={style.lylogo} />
@@ -98,18 +95,16 @@ export const MenuSetting = defineComponent({
                         gap={40}
                     />
 
-                    {/* 搜索框展示 */}
+                    {/* 从这里开始是搜索框展示 */}
                     <AutoComplete
                         class={style.search}
-                        dropdownMatchSelectWidth={252}
-                        style={{ width: 300 }}
-                        Options={dataSource}
+                        // dropdownMatchSelectWidth={252}
+                        // style={{ width: 300 }}
+                        options={dataSource}
                         onSelect={onSelect}
                         onSearch={handleSearch}
-
                     >
                         <Search size="large" class={style.search} placeholder="input here" enterButton />
-
                     </AutoComplete>
                     {/* 展示结束 */}
                 </div>
