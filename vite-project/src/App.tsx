@@ -7,6 +7,7 @@ export default defineComponent({
     return () => (
       <div>
         <MenuSetting />
+        {/* 这里后期要把homesetting换成路由插槽 */}
         <HomeSetting/>
       </div>
     )
