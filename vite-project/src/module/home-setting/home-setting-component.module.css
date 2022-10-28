@@ -1,0 +1,15 @@
+.contentStyle {
+  height: 300px;
+  color: #fff;
+  line-height: 300px;
+  text-align: center;
+  background: #364d79;
+  width: 100%;
+  display: inline-block;
+  margin: 30px;
+}
+
+.home {
+  width: 1400px;
+  margin: 0 10%;
+}
