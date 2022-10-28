@@ -40,6 +40,7 @@ export const LoginSetting = defineComponent({
             keyboard={true}
             maskClosablemaskClosable
             onCancel={handleCancel}
+            width={400}
           >
             {/* 表单开始 */}
             < Form
@@ -53,7 +54,7 @@ export const LoginSetting = defineComponent({
                 rules={[{ required: true, message: 'Please input your Username!' }]}
               >
                 <Input prefix={//引入了但是没效果
-                  <UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                  <user-outlined />} placeholder="Username" />
               </Form.Item>
               <Form.Item
                 name="password"
@@ -67,7 +68,7 @@ export const LoginSetting = defineComponent({
               </Form.Item>
               <Form.Item>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox>Remember me</Checkbox>
+                  <Checkbox class={style.loginFormForgotRight}>Remember me</Checkbox>
                 </Form.Item>
 
                 <a class={style.loginFormForgot} href="">
