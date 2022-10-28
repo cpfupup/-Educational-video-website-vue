@@ -49,7 +49,7 @@ export const LoginSetting = defineComponent({
             >
               <Form.Item
                 name="username"
-                rules={[{ required: true, message: 'Please input your Username!' }]}
+                rules={[{ required: true, message: '请输入账号' }]}
               >
                 <Input
                   placeholder="Username"
@@ -60,7 +60,7 @@ export const LoginSetting = defineComponent({
               </Form.Item>
               <Form.Item
                 name="password"
-                rules={[{ required: true, message: 'Please input your Password!' }]}
+                rules={[{ required: true, message: '请输入密码' }]}
               >
                 <Input
                   type="password"
@@ -68,23 +68,22 @@ export const LoginSetting = defineComponent({
                   style="width:90%"
                   class={style.input}
                 />
-                <LockOutlined  class={style.icon} />
+                <LockOutlined class={style.icon} />
               </Form.Item>
               <Form.Item>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox class={style.loginFormForgotRight}>Remember me</Checkbox>
+                  <Checkbox class={style.loginFormForgotRight}>记住我</Checkbox>
                 </Form.Item>
 
                 <a class={style.loginFormForgot} href="">
-                  Forgot password
-                </a>
+                  忘记密码                </a>
               </Form.Item>
 
               <Form.Item>
                 <Button type="primary" htmlType="submit" class={style.loginFormButton}>
-                  Log in
+                  登陆
                 </Button>
-                Or <a href="">register now!</a>
+                <a href="">立即注册</a>
               </Form.Item>
             </Form>
             {/* 这里表单内容结束 */}
