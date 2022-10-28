@@ -4,6 +4,11 @@
   line-height: 46px;
 }
 
+.loginForm {
+  width: 300px;
+
+}
+
 .loginFormForgotRight {
   float: right;
 }
@@ -14,4 +19,13 @@
 
 .loginFormButton {
   width: 100%;
+}
+
+.icon {
+  line-height: 32px;
+margin: 8px;
+}
+
+.input {
+  float: right;
 }

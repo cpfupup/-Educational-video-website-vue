@@ -1,7 +1,6 @@
 import { Button, Modal, Input, Form, Checkbox } from "ant-design-vue";
-import {
-  UserOutlined
-} from '@ant-design/icons-vue';
+import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
+
 import { defineComponent, ref } from "vue";
 import style from './login.module.css'
 // import { routerViewLocationKey } from "vue-router";
@@ -45,7 +44,6 @@ export const LoginSetting = defineComponent({
             {/* 表单开始 */}
             < Form
               name="normal_login"
-              class={style.loginForm}
               initialValues={{ remember: true }}
               onFinish={onFinish}
             >
@@ -53,18 +51,24 @@ export const LoginSetting = defineComponent({
                 name="username"
                 rules={[{ required: true, message: 'Please input your Username!' }]}
               >
-                <Input prefix={//引入了但是没效果
-                  <user-outlined />} placeholder="Username" />
+                <Input
+                  placeholder="Username"
+                  style="width:90%"
+                  class={style.input}
+                />
+                <UserOutlined class={style.icon} />
               </Form.Item>
               <Form.Item
                 name="password"
                 rules={[{ required: true, message: 'Please input your Password!' }]}
               >
                 <Input
-                  prefix={<LockOutlined className="site-form-item-icon" />}
                   type="password"
                   placeholder="Password"
+                  style="width:90%"
+                  class={style.input}
                 />
+                <LockOutlined  class={style.icon} />
               </Form.Item>
               <Form.Item>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
