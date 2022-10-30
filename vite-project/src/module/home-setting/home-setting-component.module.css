@@ -4,12 +4,13 @@
   line-height: 300px;
   text-align: center;
   background: #364d79;
-  width: 100%;
+  min-width: 640px;
   display: inline-block;
   margin: 30px;
 }
 
 .home {
-  width: 1400px;
-  margin: 0 10%;
+  /* width: 2400px; */
+  min-width: 640px;
+  margin: 0 15%;
 }

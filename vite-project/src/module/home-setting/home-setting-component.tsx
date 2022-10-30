@@ -18,9 +18,9 @@ export const CarouselSetting = defineComponent({
   setup() {
     return () => {
       return (
-        <Carousel autoplay>
+        <Carousel autoplay class={style.home}>
           <div>
-            <h3 class={style.contentStyle}>1</h3>
+            <h3 variableWidth={true} class={style.contentStyle}>1</h3>
           </div>
           <div>
             <h3 class={style.contentStyle}>2</h3>
