@@ -1,16 +1,39 @@
 .contentStyle {
-  height: 300px;
-  color: #fff;
-  line-height: 300px;
   text-align: center;
+  height: 360px;
+  line-height: 160px;
   background: #364d79;
-  min-width: 640px;
-  display: inline-block;
-  margin: 30px;
+  overflow: hidden;
+  width: 100%;
+  color: white;
+}
+
+.carousel {
+  flex: 2;
+  float: right;
+  overflow: hidden;
+}
+
+.breadcrumb {
+  flex: 1;
+  height: 360px;
+  /* background-color: black; */
+  /* overflow: hidden ; */
+}
+
+.breadcrumbItem {
+  white-space: nowrap;
+  margin: 5% 3%;
+
+}
+
+.breadcrumbFirstItem{
+  color: black;
 }
 
 .home {
-  /* width: 2400px; */
-  min-width: 640px;
-  margin: 0 15%;
+  width: 80%;
+  min-width: 800px;
+  margin: 1% auto;
+  display: flex;
 }
