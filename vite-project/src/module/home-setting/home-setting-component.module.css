@@ -1,7 +1,12 @@
-.home{
+body {
+  background-color: #f6f4f4;
+}
+
+.home {
   width: 80%;
   margin: 1% auto
 }
+
 .informationDisplayColumn {
   width: 100%;
   min-width: 800px;
@@ -28,8 +33,10 @@
 .breadcrumb {
   flex: 1;
   height: 360px;
-  /* background-color: black; */
-  /* overflow: hidden ; */
+  min-width: 400px;
+  margin-right: 1%;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .breadcrumbItem {
@@ -38,11 +45,15 @@
 
 }
 
-.breadcrumbFirstItem{
+.breadcrumbFirstItem {
   color: black;
 }
 
+.courseShow {
+  width: 100%;
+}
 
-.VideoShow{
-  width: 80%;
+.card {
+  float: left;
+  margin: 1% 0 0 1%;
 }
