@@ -1,3 +1,14 @@
+.home{
+  width: 80%;
+  margin: 1% auto
+}
+.informationDisplayColumn {
+  width: 100%;
+  min-width: 800px;
+  margin: 1% auto;
+  display: flex;
+}
+
 .contentStyle {
   text-align: center;
   height: 360px;
@@ -31,9 +42,7 @@
   color: black;
 }
 
-.home {
+
+.VideoShow{
   width: 80%;
-  min-width: 800px;
-  margin: 1% auto;
-  display: flex;
 }

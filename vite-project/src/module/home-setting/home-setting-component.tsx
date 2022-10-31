@@ -1,15 +1,17 @@
-import { Carousel, Breadcrumb, Radio, Button } from "ant-design-vue";
+import { Carousel, Breadcrumb, Image } from "ant-design-vue";
 import { defineComponent } from "vue";
 import style from './home-setting-component.module.css'
 export const HomeSetting = defineComponent({
   setup() {
     return () => {
       return (
-        <div class={style.home}>
-          <classlBreadcrumbSetting />
-          <CarouselSetting />
+        <div class={style.home} >
+          <div class={style.informationDisplayColumn}>
+            <ClasslBreadcrumbSetting />
+            <CarouselSetting />
+          </div>
+          <VideoShowSetting />
         </div>
-
 
       )
     }
@@ -38,7 +40,7 @@ export const CarouselSetting = defineComponent({
     }
   }
 })
-export const classlBreadcrumbSetting = defineComponent({//这里是课程列表，后期需要按照接口更改信息
+export const ClasslBreadcrumbSetting = defineComponent({//这里是课程列表，后期需要按照接口更改信息
   setup() {
     return () => {
       return (
@@ -145,8 +147,39 @@ export const classlBreadcrumbSetting = defineComponent({//这里是课程列表�
               <a href="">更多</a>
             </Breadcrumb.Item>
           </Breadcrumb>
-
         </div>
+
+      )
+    }
+  }
+})
+export const VideoShowSetting = defineComponent({
+  setup() {
+    return () => {
+      return (
+        <div class={style.VideoShow}>
+          <Image
+            width={200}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width={200}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width={200}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width={200}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width={200}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+        </div>
+
 
       )
     }
