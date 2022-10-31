@@ -1,12 +1,12 @@
 .logIn {
   float: right;
-  margin: 7px 30px;
+  margin-top: 7px;
+  margin-right: 10%;
   line-height: 46px;
 }
 
 .loginForm {
   width: 300px;
-
 }
 
 .loginFormForgotRight {
@@ -23,7 +23,7 @@
 
 .icon {
   line-height: 32px;
-margin: 8px;
+  margin: 8px;
 }
 
 .input {

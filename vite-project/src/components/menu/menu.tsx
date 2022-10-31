@@ -81,7 +81,7 @@ export const MenuSetting = defineComponent({
                     />
 
                     {/* 这里是登陆页面，后续需要添加登陆判断 */}
-                    <LoginSetting class={style['logIn']}></LoginSetting>
+                    <LoginSetting class={style.logIn}></LoginSetting>
                     {/* 登陆结束 */}
 
 
