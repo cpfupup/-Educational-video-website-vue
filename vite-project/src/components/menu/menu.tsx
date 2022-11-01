@@ -22,11 +22,11 @@ export const MenuSetting = defineComponent({
             },
             {
                 label: '下载App',
-                key: 'submenu',
+                key: 'item-3',
 
             },
-            { label: '直播', key: 'item-3' },
-            { label: '消息', key: 'item-4' },
+            { label: '直播', key: 'item-4' },
+            { label: '消息', key: 'item-5' },
         ];
 
         //从这里开始是搜索框提示栏目显示内容，后期需要更改
@@ -76,14 +76,11 @@ export const MenuSetting = defineComponent({
             return (
                 <div class={style.header}>
                     <img src={lylogo} alt="" class={style.lylogo} />
-                    <Menu class={style.menu} items={items}
-                        mode="horizontal"
-                    />
+                    <Menu class={style.menu} items={items} mode="horizontal"/>
 
                     {/* 这里是登陆页面，后续需要添加登陆判断 */}
                     <LoginSetting class={style.logIn}></LoginSetting>
                     {/* 登陆结束 */}
-
 
                     <Avatar
                         class={style.avatar}
@@ -94,8 +91,6 @@ export const MenuSetting = defineComponent({
                     {/* 从这里开始是搜索框展示 */}
                     <AutoComplete
                         class={style.search}
-                        // dropdownMatchSelectWidth={252}
-                        // style={{ width: 300 }}
                         options={dataSource.value}
                         onSelect={onSelect}
                         onSearch={handleSearch}
