@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { Menu, Avatar, Input, AutoComplete } from 'ant-design-vue';
-import { LoginSetting } from '../login/login';
+import { LoginSetting } from '../login/login.tsx';
 import lylogo from '../../assets/ly.png'
 import style from './menu.module.css'
 

@@ -3,49 +3,32 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 
 import { defineComponent, ref } from "vue";
 import style from './login.module.css'
-// import { routerViewLocationKey } from "vue-router";
+import { useLoginController } from './login.ts'
+import { routerViewLocationKey } from "vue-router";
 export const LoginSetting = defineComponent({
   setup() {
-    //窗口弹出逻辑
-    const visible = ref<boolean>(false);
-
-    const showModal = () => {
-      visible.value = true;
-    };
-
-    const handleOk = (e: MouseEvent) => {
-      console.log(e);
-      visible.value = false;
-    };
-    const handleCancel = () => {
-      visible.value = false;
-    };
-
-    //表单逻辑
-    const onFinish = (values: any) => {
-      console.log('Received values of form: ', values);
-    };
+    const loginController = useLoginController()
     return () => {
       return (
         <>
-          <Button onClick={showModal} class={style.logIn} type="text">
+          <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
             登陆
           </Button>
           <Modal
             title="账号登陆"
-            visible={visible.value}
+            visible={loginController.visible}
             footer={false}
-            onOk={handleOk}
+            onOk={() => loginController.handleOk()}
             keyboard={true}
-            maskClosablemaskClosable
-            onCancel={handleCancel}
+            maskClosable
+            onCancel={() => loginController.handleCancel()}
             width={400}
           >
             {/* 表单开始 */}
             < Form
               name="normal_login"
               initialValues={{ remember: true }}
-              onFinish={onFinish}
+              onFinish={() => loginController.onFinish}
             >
               <Form.Item
                 name="username"
@@ -86,7 +69,7 @@ export const LoginSetting = defineComponent({
                 <a href="">立即注册</a>
               </Form.Item>
             </Form>
-            {/* 这里表单内容结束 */}
+            {/* {/* 这里表单内容结束 */}
           </Modal>
         </>
       )
