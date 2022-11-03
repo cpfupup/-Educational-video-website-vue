@@ -1,5 +1,5 @@
 import { Carousel, Breadcrumb } from "ant-design-vue";
-import { defineComponent } from "vue";
+import { defineComponent, render } from "vue";
 import style from './home-setting-component.module.css'
 export const HomeSetting = defineComponent({
   setup() {
@@ -43,110 +43,102 @@ export const CarouselSetting = defineComponent({
 export const ClasslBreadcrumbSetting = defineComponent({//这里是课程列表，后期需要按照接口更改信息
   setup() {
     return () => {
+      const items = [//这里为什么不能用ref？
+        {
+          label: '嵌入式',
+          key: 'item-1',
+          children: [
+            { label: 'C语言', key: 'submenu-item-1-1' },
+            { label: '操作系统', key: 'submenu-item-1-2' },
+            { label: '单片机', key: 'submenu-item-1-3' },
+            { label: '计算机组成原理', key: 'submenu-item-1-4' },
+            { label: '更多', key: 'submenu-item-1-5' }
+          ],
+        },
+        {
+          label: 'Linux开发',
+          key: 'item-2',
+          children: [
+            { label: 'unix/linux编程实践教程', key: 'submenu-item-2-1' },
+            { label: 'ARM架构', key: 'submenu-item-2-2' },
+            { label: '模拟电路&数字电路', key: 'submenu-item-2-3' },
+            { label: '更多', key: 'submenu-item-2-4' }
+          ],
+        },
+        {
+          label: '后台开发',
+          key: 'item-3',
+          children: [
+            { label: 'java', key: 'submenu-item-3-1' },
+            { label: 'PHP', key: 'submenu-item-3-2' },
+            { label: 'Go', key: 'submenu-item-3-3' },
+            { label: '更多', key: 'submenu-item-3-4' }
+          ],
+        },
+        {
+          label: '前端开发',
+          key: 'item-4',
+          children: [
+            { label: '前端0基础', key: 'submenu-item-4-1' },
+            { label: '前端进阶', key: 'submenu-item-4-2' },
+            { label: '更多', key: 'submenu-item-4-3' },
+          ],
+        },
+        {
+          label: '运维',
+          key: 'item-5',
+          children: [
+            { label: 'Linux运维', key: 'submenu-item-5-1' },
+            { label: '自动化运维', key: 'submenu-item-5-2' },
+            { label: '更多', key: 'submenu-item-5-3' },
+          ],
+        },
+        {
+          label: '计算机通识',
+          key: 'item-6',
+          children: [
+            { label: '计算机网络', key: 'submenu-item-6-1' },
+            { label: '操作系统', key: 'submenu-item-6-2' },
+            { label: '数据库组成原理', key: 'submenu-item-6-3' },
+            { label: '更多', key: 'submenu-item-6-4' }
+          ],
+        },
+        {
+          label: '软件测试',
+          key: 'item-7',
+          children: [
+            { label: '自动化测试', key: 'submenu-item-7-1' },
+            { label: '功能测试', key: 'submenu-item-7-2' },
+            { label: '接口测试', key: 'submenu-item-7-3' },
+            { label: '更多', key: 'submenu-item-7-4' }
+          ],
+        },
+      ];
+
+
       return (
-        <div class={style.breadcrumb}>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>嵌入式</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">C语言</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">操作系统</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">单片机</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">计算机组成原理</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>Linux开发</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">unix/linux编程实践教程</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">ARM架构</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a>模拟电路&数字电路</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>后台开发</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">java</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">PHP</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a>Go</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>前端开发</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">前端0基础</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">前端进阶</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>运维</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">Linux运维</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">自动化运维</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>计算机通识</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">计算机网络</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">操作系统</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">数据库组成原理</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <Breadcrumb class={style.breadcrumbItem}>
-            <Breadcrumb.Item class={style.breadcrumbFirstItem}>软件测试</Breadcrumb.Item>
-            <Breadcrumb.Item >
-              <a href="">自动化测试</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">功能测试</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a>接口测试</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">更多</a>
-            </Breadcrumb.Item>
-          </Breadcrumb>
+        <div class={style.breadcrumb} model={items}>
+          {
+            items.map(item => {
+              return (
+                <Breadcrumb class={style.breadcrumbItem}>
+                  <Breadcrumb.Item class={style.breadcrumbFirstItem}>{item.label}</Breadcrumb.Item>
+                  {
+                    item.children.map(items => {
+                      return (
+                        <Breadcrumb.Item >
+                          <a href="">{items.label}</a>
+                        </Breadcrumb.Item>
+
+                      )
+                    })
+                  }
+
+                </Breadcrumb>
+              )
+            })
+
+          }
         </div>
 
       )
@@ -171,7 +163,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -183,7 +175,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -195,7 +187,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -207,7 +199,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -219,7 +211,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -231,7 +223,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -243,7 +235,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -255,7 +247,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -267,7 +259,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -279,7 +271,7 @@ export const VideoShowSetting = defineComponent({
               <a-avatar src="https://joeschmoe.io/api/v1/random" />
             </a-card-meta>
           </a-card>
-          <a-card hoverable style="width: 19%"  class={style.card}>
+          <a-card hoverable style="width: 19%" class={style.card}>
             <img
               alt="example"
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
