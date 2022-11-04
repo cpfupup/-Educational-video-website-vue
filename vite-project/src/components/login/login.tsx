@@ -6,14 +6,26 @@ import style from './login.module.css'
 import { useLoginController } from './login.ts'
 import { routerViewLocationKey } from "vue-router";
 export const LoginSetting = defineComponent({
+  render() {
+    return (
+      <a class={style.logo}>
+        <i class={style.icon} />
+        <span class={style.name}>CRM</span>
+      </a>
+    );
+  },
   setup() {
     const loginController = useLoginController()
     return () => {
       return (
         <>
-          <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
-            登陆
+        {loginController.loginState}
+          {/* <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
+            {loginController.loginState}
           </Button>
+          <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
+            {loginController.loginState}
+          </Button> */}
           <Modal
             title="账号登陆"
             visible={loginController.visible}
@@ -59,11 +71,16 @@ export const LoginSetting = defineComponent({
                 </Form.Item>
 
                 <a class={style.loginFormForgot} href="">
-                  忘记密码                </a>
+                  忘记密码
+                </a>
               </Form.Item>
 
               <Form.Item>
-                <Button type="primary" htmlType="submit" class={style.loginFormButton}>
+                <Button
+                  onClick={() => loginController.handleOk()}
+                  type="primary"
+                  htmlType="submit"
+                  class={style.loginFormButton}>
                   登陆
                 </Button>
                 <a href="">立即注册</a>
