@@ -49,12 +49,12 @@ body {
   color: black;
 }
 
-.courseShow {
-  width: 100%;
-  margin-bottom: 100px;
-}
-
 .card {
   float: left;
+  min-width: 150px;
   margin: 1% 0 0 1%;
+}
+
+.cardImg {
+  width: 100%
 }

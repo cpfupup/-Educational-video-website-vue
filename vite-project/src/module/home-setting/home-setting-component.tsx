@@ -262,7 +262,7 @@ export const VideoShowSetting = defineComponent({
       ];
       return (
         //这里后期应当交给后端返回数据进行渲染
-        <div class={style.courseShow} model={items}>
+        <div model={items} >
           {
             items.map(item => {
               return (
@@ -273,6 +273,7 @@ export const VideoShowSetting = defineComponent({
                       return (
                         <a-card hoverable style="width: 19%" class={style.card}>
                           <img
+                            class={style.cardImg}
                             alt={items.imgAlt}
                             src={items.imgSrc}
                           />
