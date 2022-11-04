@@ -17,6 +17,8 @@ export const HomeSetting = defineComponent({
     }
   }
 })
+
+// 轮播图
 export const CarouselSetting = defineComponent({
   setup() {
     return () => {
@@ -40,10 +42,12 @@ export const CarouselSetting = defineComponent({
     }
   }
 })
-export const ClasslBreadcrumbSetting = defineComponent({//这里是课程列表，后期需要按照接口更改信息
+
+//这里是课程列表，后期需要按照接口更改信息
+export const ClasslBreadcrumbSetting = defineComponent({
   setup() {
     return () => {
-      const items = [//这里为什么不能用ref？
+      const items = [
         {
           label: '嵌入式',
           key: 'item-1',
@@ -129,15 +133,12 @@ export const ClasslBreadcrumbSetting = defineComponent({//这里是课程列表�
                         <Breadcrumb.Item >
                           <a href="">{items.label}</a>
                         </Breadcrumb.Item>
-
                       )
                     })
                   }
-
                 </Breadcrumb>
               )
             })
-
           }
         </div>
 
@@ -145,144 +146,149 @@ export const ClasslBreadcrumbSetting = defineComponent({//这里是课程列表�
     }
   }
 })
+
+// 视频展示
 export const VideoShowSetting = defineComponent({
   setup() {
     return () => {
+      const items = [
+        {
+          label: '视频学习',
+          key: 'item-1',
+          children: [//这里需要mock一下后期需要后端返回
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+            {
+              metaTitle: "Card title",
+              metaDescription: "This is the description",
+              avatarSrc: "https://joeschmoe.io/api/v1/random",
+              settingKey: 'setting',
+              editKey: 'edit',
+              ellipsisKey: 'ellipsis',
+              imgAlt: 'example',
+              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+            },
+
+          ],
+        }
+      ];
       return (
-        <div class={style.courseShow}>
-          <h1>视频学习</h1>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
-          <a-card hoverable style="width: 19%" class={style.card}>
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <setting-outlined key="setting" />
-            <edit-outlined key="edit" />
-            <ellipsis-outlined key="ellipsis" />
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar src="https://joeschmoe.io/api/v1/random" />
-            </a-card-meta>
-          </a-card>
+        //这里后期应当交给后端返回数据进行渲染
+        <div class={style.courseShow} model={items}>
+          {
+            items.map(item => {
+              return (
+                <>
+                  <h1>{item.label}</h1>
+                  {
+                    item.children.map(items => {
+                      return (
+                        <a-card hoverable style="width: 19%" class={style.card}>
+                          <img
+                            alt={items.imgAlt}
+                            src={items.imgSrc}
+                          />
+                          <setting-outlined key={items.settingKey} />
+                          <edit-outlined key="edit" />
+                          <ellipsis-outlined key="ellipsis" />
+                          <a-card-meta title="Card title" description="This is the description">
+                          </a-card-meta>
+                        </a-card>
+                      )
+                    })
+                  }
+                </>
+              )
+            })
+          }
         </div>
       )
     }
