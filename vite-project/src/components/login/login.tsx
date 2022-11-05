@@ -19,7 +19,7 @@ export const LoginSetting = defineComponent({
     return () => {
       return (
         <>
-        {/* 登陆判断返回按钮 */}
+          {/* 登陆判断返回按钮 */}
           <div>
             {loginController.loginState ?
               <Button onClick={() => loginController.handleCancel()} class={style.logIn} type="text">
