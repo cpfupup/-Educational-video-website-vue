@@ -27,11 +27,17 @@ export const useLoginController = defineStore('operate-controller', {
       this.visible = false;
       this.loginPrompt = '退出登陆';
       this.loginState = true
+      console.log('我登录了');
 
     },
 
     handleCancel() {
-      this.visible = false;
+      // this.visible = false;
+      this.loginState = false
+      this.loginPrompt = '登陆/注册';
+      console.log('我退出了 需要重新登陆');
+      
+
     },
     //表单逻辑
     onFinish() {

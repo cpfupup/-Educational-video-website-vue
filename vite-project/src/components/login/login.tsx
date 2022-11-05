@@ -19,13 +19,18 @@ export const LoginSetting = defineComponent({
     return () => {
       return (
         <>
-        {loginController.loginState}
-          {/* <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
-            {loginController.loginState}
-          </Button>
-          <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
-            {loginController.loginState}
-          </Button> */}
+        {/* 登陆判断返回按钮 */}
+          <div>
+            {loginController.loginState ?
+              <Button onClick={() => loginController.handleCancel()} class={style.logIn} type="text">
+                {loginController.loginPrompt}
+              </Button> :
+              <Button onClick={() => loginController.showModal()} class={style.logIn} type="text">
+                {loginController.loginPrompt}
+              </Button>
+            }
+          </div>
+          {/* 登陆判断展示页面 */}
           <Modal
             title="账号登陆"
             visible={loginController.visible}
