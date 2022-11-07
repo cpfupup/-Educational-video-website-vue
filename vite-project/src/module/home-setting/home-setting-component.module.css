@@ -12,6 +12,7 @@ body {
   min-width: 800px;
   margin: 1% auto;
   display: flex;
+  height: 360px;
 }
 
 .contentStyle {

@@ -1,6 +1,7 @@
 import { Carousel, Breadcrumb } from "ant-design-vue";
 import { defineComponent, render } from "vue";
 import style from './home-setting-component.module.css'
+import lyCarousel from '../../assets/lyCarousel.png'
 export const HomeSetting = defineComponent({
   setup() {
     return () => {
@@ -25,7 +26,7 @@ export const CarouselSetting = defineComponent({
       return (
         <Carousel autoplay class={style.carousel}>
           <div>
-            <h3 variableWidth={true} class={style.contentStyle}>1</h3>
+            <img src={lyCarousel} alt="" class={style.imgCarousel} />
           </div>
           <div>
             <h3 class={style.contentStyle}>2</h3>
