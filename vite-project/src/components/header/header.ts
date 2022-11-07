@@ -10,6 +10,7 @@ interface IState {
   dataSource: Option[];
   searchState: boolean;
 }
+
 const getMenuState: () => IState = () => {
   return {
     value: '',
@@ -17,10 +18,11 @@ const getMenuState: () => IState = () => {
     searchState: false
   }
 }
+
 export const getMenuSettingController = defineStore('authorization-controller', {
   state: getMenuState,
   actions: {
-    // //从这里开始是搜索框提示栏目显示内容，后期需要更改
+    //从这里开始是搜索框提示栏目显示内容，后期需要更改
     handleSearch(value: string) {
       this.dataSource = value ? this.searchResult(value) : [];
       this.searchState = true
@@ -32,7 +34,6 @@ export const getMenuSettingController = defineStore('authorization-controller', 
     onSelect: (value: any) => {
       console.log('onSelect', value);
     },
-
     getRandomInt: (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min,
     searchResult(query: string): Option[] {
       return new Array(this.getRandomInt(5))
@@ -45,7 +46,6 @@ export const getMenuSettingController = defineStore('authorization-controller', 
           count: this.getRandomInt(200, 100),
         }));
     },
-    // //到这里搜索框逻辑结束
+    //到这里搜索框逻辑结束
   }
-
 })

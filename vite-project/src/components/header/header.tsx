@@ -9,7 +9,7 @@ export const MenuSetting = defineComponent({
 
     setup() {
         const { Search } = Input;
-        const items = [//这里为什么不能用ref？
+        const items = [
             { label: '首页', key: 'item-1' }, // 菜单项务必填写 key
             {
                 label: '我的学习',
@@ -76,7 +76,6 @@ export const MenuSetting = defineComponent({
                         </div>
                     </AutoComplete >
                     {/* 展示结束 */}
-
                 </div >
             )
         }
