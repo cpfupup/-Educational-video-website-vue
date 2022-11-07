@@ -32,7 +32,6 @@ export const useLoginController = defineStore('operate-controller', {
     },
 
     handleCancel() {
-      // this.visible = false;
       this.loginState = false
       this.loginPrompt = '登陆/注册';
       console.log('我退出了 需要重新登陆');

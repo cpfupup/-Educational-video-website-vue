@@ -1,6 +1,7 @@
 import { defineComponent, ref } from 'vue';
 import { Menu, Avatar, Input, AutoComplete } from 'ant-design-vue';
 import { LoginSetting } from '../login/login.tsx';
+import { getMenuSettingController } from './header.ts'
 import lylogo from '../../assets/ly.png'
 import style from './header.module.css'
 
@@ -29,59 +30,17 @@ export const MenuSetting = defineComponent({
             { label: '消息', key: 'item-5' },
         ];
 
-        //从这里开始是搜索框提示栏目显示内容，后期需要更改
-        const value = ref('');
-        const dataSource = ref<Option[]>([]);
-        const onSelect = (value: any) => {
-        };
-        const getRandomInt = (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
-        const searchResult = (query: string) =>
-            new Array(getRandomInt(5))
-                .join('.')
-                .split('.')
-                .map((_, idx) => {
-                    const category = `${query}${idx}`;
-                    return {
-                        value: category,
-                        label: (
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                }}
-                            >
-                                <span>
-                                    Found {query} on{' '}
-                                    <a
-                                        href={`https://s.taobao.com/search?q=${query}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {category}
-                                    </a>
-                                </span>
-                                <span>{getRandomInt(200, 100)} results</span>
-                            </div>
-                        ),
-                    };
-                });
-
-        const handleSearch = (value: string) => {
-            dataSource.value = value ? searchResult(value) : [];
-
-        };
-        //到这里搜索框逻辑结束
-
         return () => {
+            const menuSettingController = getMenuSettingController()
             return (
                 <div class={style.header}>
                     <img src={lylogo} alt="" class={style.lylogo} />
-                    <Menu class={style.menu} items={items} mode="horizontal"/>
+                    <Menu class={style.menu} items={items} mode="horizontal" />
 
                     {/* 这里是登陆页面，后续需要添加登陆判断 */}
                     <LoginSetting class={style.logIn}></LoginSetting>
-                    {/* 登陆结束 */}
 
+                    {/* 头像 */}
                     <Avatar
                         class={style.avatar}
                         size={46}
@@ -90,16 +49,35 @@ export const MenuSetting = defineComponent({
 
                     {/* 从这里开始是搜索框展示 */}
                     <AutoComplete
+                        // dropdownMatchSelectWidth={252}
                         class={style.search}
-                        options={dataSource.value}
-                        onSelect={onSelect}
-                        onSearch={handleSearch}
+                        options={menuSettingController.dataSource}
+                        onSelect={(item) => menuSettingController.onSelect(item)}
+                        onSearch={(item) => menuSettingController.handleSearch(item)}
                     >
-                        <Search size="large" class={style.search} placeholder="请输入搜索内容" enterButton />
-                    </AutoComplete>
+                        <Search
+                            class={style.search}
+                            size="large"
+                            placeholder="请输入搜索内容"
+                            enterButton
+                        />
+                        <div style="display: flex; justify-content: space-between">
+                            <span>
+                                Found {menuSettingController.query} on
+                                <a
+                                    href="`https://s.taobao.com/search?q=${item.query}`"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {menuSettingController.category}
+                                </a>
+                            </span>
+                            <span>{menuSettingController.count} results</span>
+                        </div>
+                    </AutoComplete >
                     {/* 展示结束 */}
 
-                </div>
+                </div >
             )
         }
     }
