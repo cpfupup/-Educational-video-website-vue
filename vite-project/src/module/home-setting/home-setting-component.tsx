@@ -1,4 +1,5 @@
 import { Carousel, Breadcrumb } from "ant-design-vue";
+import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
 import { defineComponent, render } from "vue";
 import style from './home-setting-component.module.css'
 import lyCarousel from '../../assets/lyCarousel.png'
@@ -24,21 +25,26 @@ export const CarouselSetting = defineComponent({
   setup() {
     return () => {
       return (
-        <Carousel autoplay class={style.carousel}>
+        <Carousel autoplay class={style.carousel} adaptiveHeight arrows>
+          {/* <div class={style["custom-slick-arrow"]} style="left: 10px; z-index: 1">
+            <LeftCircleOutlined />
+          </div>
+          <div class={style["custom-slick-arrow"]} style="right: 10px">
+            <RightCircleOutlined />
+          </div> */}
           <div>
             <img src={lyCarousel} alt="" class={style.imgCarousel} />
           </div>
           <div>
-            <h3 class={style.contentStyle}>2</h3>
+            <img src={lyCarousel} alt="" class={style.imgCarousel} />
           </div>
           <div>
-            <h3 class={style.contentStyle}>3</h3>
+            <img src={lyCarousel} alt="" class={style.imgCarousel} />
           </div>
           <div>
-            <h3 class={style.contentStyle}>4</h3>
+            <img src={lyCarousel} alt="" class={style.imgCarousel} />
           </div>
         </Carousel>
-
       )
     }
   }
