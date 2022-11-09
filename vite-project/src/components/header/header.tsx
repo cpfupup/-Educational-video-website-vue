@@ -33,50 +33,53 @@ export const MenuSetting = defineComponent({
         return () => {
             const menuSettingController = getMenuSettingController()
             return (
-                <div class={style.header}>
-                    <img src={lylogo} alt="" class={style.lylogo} />
-                    <Menu class={style.menu} items={items} mode="horizontal" />
+                <div class={style.backGround}>
+                    <div class={style.header}>
+                        <img src={lylogo} alt="" class={style.lylogo} />
+                        <Menu class={style.menu} items={items} mode="horizontal" />
 
-                    {/* 这里是登陆页面，后续需要添加登陆判断 */}
-                    <LoginSetting class={style.logIn}></LoginSetting>
+                        {/* 这里是登陆页面，后续需要添加登陆判断 */}
+                        <LoginSetting class={style.logIn}></LoginSetting>
 
-                    {/* 头像 */}
-                    <Avatar
-                        class={style.avatar}
-                        size={46}
-                        gap={40}
-                    />
-
-                    {/* 从这里开始是搜索框展示 */}
-                    <AutoComplete
-                        // dropdownMatchSelectWidth={252}
-                        class={style.search}
-                        options={menuSettingController.dataSource}
-                        onSelect={(item) => menuSettingController.onSelect(item)}
-                        onSearch={(item) => menuSettingController.handleSearch(item)}
-                    >
-                        <Search
-                            class={style.search}
-                            size="large"
-                            placeholder="请输入搜索内容"
-                            enterButton
+                        {/* 头像 */}
+                        <Avatar
+                            class={style.avatar}
+                            size={46}
+                            gap={40}
                         />
-                        <div style="display: flex; justify-content: space-between">
-                            <span>
-                                Found {menuSettingController.query} on
-                                <a
-                                    href="`https://s.taobao.com/search?q=${item.query}`"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {menuSettingController.category}
-                                </a>
-                            </span>
-                            <span>{menuSettingController.count} results</span>
-                        </div>
-                    </AutoComplete >
-                    {/* 展示结束 */}
-                </div >
+
+                        {/* 从这里开始是搜索框展示 */}
+                        <AutoComplete
+                            // dropdownMatchSelectWidth={252}
+                            class={style.search}
+                            options={menuSettingController.dataSource}
+                            onSelect={(item) => menuSettingController.onSelect(item)}
+                            onSearch={(item) => menuSettingController.handleSearch(item)}
+                        >
+                            <Search
+                                class={style.search}
+                                size="large"
+                                placeholder="请输入搜索内容"
+                                enterButton
+                            />
+                            <div style="display: flex; justify-content: space-between">
+                                <span>
+                                    Found {menuSettingController.query} on
+                                    <a
+                                        href="`https://s.taobao.com/search?q=${item.query}`"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {menuSettingController.category}
+                                    </a>
+                                </span>
+                                <span>{menuSettingController.count} results</span>
+                            </div>
+                        </AutoComplete >
+                        {/* 展示结束 */}
+                    </div >
+                </div>
+
             )
         }
     }
