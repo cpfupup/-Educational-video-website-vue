@@ -1,3 +1,4 @@
+//conmonents里面的组件一般用来存放公共组件
 import { defineComponent, ref } from 'vue';
 import { Menu, Avatar, Input, AutoComplete } from 'ant-design-vue';
 import { LoginSetting } from '../login/login.tsx';
