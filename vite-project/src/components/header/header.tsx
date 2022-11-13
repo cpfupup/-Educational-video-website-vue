@@ -34,7 +34,9 @@ export const MenuSetting = defineComponent({
         return () => {
             const menuSettingController = getMenuSettingController()
             return (
+                //最外层头部
                 <div class={style.backGround}>
+                    {/* 中间实体盒子 */}
                     <div class={style.header}>
                         <img src={lylogo} alt="" class={style.lylogo} />
                         <Menu class={style.menu} items={items} mode="horizontal" />
