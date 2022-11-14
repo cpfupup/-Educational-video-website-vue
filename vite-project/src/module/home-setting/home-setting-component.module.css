@@ -5,6 +5,7 @@ body {
 .home {
   width: 1200px;
   margin: 1% auto;
+  
 }
 
 .informationDisplayColumn {
@@ -13,6 +14,9 @@ body {
   margin: 1% auto;
   display: flex;
   height: 380px;
+  box-shadow: 0px 12px 20px 0px rgba(195, 194, 194, 0.8);
+  overflow: hidden;
+border-radius: 10px;
 }
 
 .contentStyle {
@@ -26,9 +30,11 @@ body {
 }
 
 .carousel {
+  overflow: hidden;
   flex: 2;
   float: right;
   overflow: hidden;
+  border-radius:  0 10px 10px 0;
 }
 
 .imgCarousel {
@@ -40,8 +46,7 @@ body {
   flex: 1;
   height: 380px;
   min-width: 400px;
-  margin-right: 1%;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
   background-color: white;
 }
 
