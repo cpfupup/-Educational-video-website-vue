@@ -11,10 +11,15 @@ export const MenuSetting = defineComponent({
     setup() {
         const { Search } = Input;
         const items = [
-            { label: '首页', key: 'item-1' }, // 菜单项务必填写 key
+            {
+                label: '首页', key: 'item-1',
+                style: ['width:112px', 'text-align:center'],
+                children: [],
+            }, // 菜单项务必填写 key
             {
                 label: '我的学习',
                 key: 'item-2',
+                style: ['width:112px', 'text-align:center'],
                 children: [
                     { label: '文章阅读', key: 'submenu-item-2-1' },
                     { label: '视频学习', key: 'submenu-item-2-2' },
@@ -25,10 +30,21 @@ export const MenuSetting = defineComponent({
             {
                 label: '下载App',
                 key: 'item-3',
-
+                style: ['width:112px', 'text-align:center'],
+                children: [],
             },
-            { label: '直播', key: 'item-4' },
-            { label: '消息', key: 'item-5' },
+            {
+                label: '直播',
+                key: 'item-4',
+                style: ['width:112px', 'text-align:center'],
+                children: []
+            },
+            {
+                label: '消息',
+                key: 'item-5',
+                style: ['width:112px', 'text-align:center'],
+                children: [],
+            },
         ];
 
         return () => {
@@ -39,7 +55,11 @@ export const MenuSetting = defineComponent({
                     {/* 中间实体盒子 */}
                     <div class={style.header}>
                         <img src={lylogo} alt="" class={style.lylogo} />
-                        <Menu class={style.menu} items={items} mode="horizontal" />
+                        <Menu
+                            class={style.menu}
+                            items={items}
+                            mode="horizontal"
+                        />
 
                         {/* 这里是登陆页面，后续需要添加登陆判断 */}
                         <LoginSetting class={style.logIn}></LoginSetting>
