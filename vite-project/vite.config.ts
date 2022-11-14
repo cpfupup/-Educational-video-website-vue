@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
-import styleImport from 'vite-plugin-style-import';
 import path from 'path';
 // https://vitejs.dev/config/
 import Components from 'unplugin-vue-components/vite'
@@ -50,18 +49,6 @@ export default defineConfig({
     Components({
       resolvers: [AntDesignVueResolver()],
     }),
-    // styleImport({
-    //   libs: [
-    //     {
-    //       libraryName: 'ant-design-vue',
-    //       esModule: true,
-    //       resolveStyle: (name) => {
-    //         return `ant-design-vue/es/${name}/style/index`;
-    //       },
-    //     },
-    //   ],
-    // }),
 
   ],
-
 })
