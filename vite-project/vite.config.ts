@@ -39,7 +39,12 @@ export default defineConfig({
       },
     },
   },
-
+  server: {
+    port: 8080,
+    proxy: {
+      '/api': ''
+    },
+  },
   plugins: [
     vue(),
     vueJsx({
@@ -49,6 +54,7 @@ export default defineConfig({
     Components({
       resolvers: [AntDesignVueResolver()],
     }),
+
 
   ],
 })
