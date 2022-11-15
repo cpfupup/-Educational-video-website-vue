@@ -1,8 +1,10 @@
-import { Carousel, Breadcrumb } from "ant-design-vue";
+import { Carousel, Breadcrumb, Image } from "ant-design-vue";
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
 import { defineComponent, render } from "vue";
 import style from './home-setting-component.module.css'
 import lyCarousel from '../../assets/lyCarousel.png'
+
+import { getSliders } from "@/service/home-service";
 export const HomeSetting = defineComponent({
   setup() {
     return () => {
@@ -23,28 +25,31 @@ export const HomeSetting = defineComponent({
 // 轮播图
 export const CarouselSetting = defineComponent({
   setup() {
-    return () => {
+    return async () => {
+      const imgUrl = (await getSliders()).data.list
       return (
-        <Carousel autoplay class={style.carousel} adaptiveHeight arrows>
-          {/* <div class={style["custom-slick-arrow"]} style="left: 10px; z-index: 1">
-            <LeftCircleOutlined />
-          </div>
-          <div class={style["custom-slick-arrow"]} style="right: 10px">
-            <RightCircleOutlined />
-          </div> */}
+        <Carousel
+          Carousel
+          autoplay
+          class={style.carousel}
+          adaptiveHeight
+          arrows
+          mode={imgUrl}
+        >
           <div>
             <img src={lyCarousel} alt="" class={style.imgCarousel} />
           </div>
-          <div>
-            <img src={lyCarousel} alt="" class={style.imgCarousel} />
-          </div>
-          <div>
-            <img src={lyCarousel} alt="" class={style.imgCarousel} />
-          </div>
-          <div>
-            <img src={lyCarousel} alt="" class={style.imgCarousel} />
-          </div>
-        </Carousel>
+          {
+            imgUrl.map((item) => {
+              console.log(item.imageUrl);
+              return (
+                <div>
+                  <Image src={item.imageUrl} alt="" class={style.imgCarousel} />
+                </div>
+              )
+            })
+          }
+        </Carousel >
       )
     }
   }
