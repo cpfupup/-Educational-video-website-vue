@@ -1,0 +1,30 @@
+.logIn {
+  float: right;
+  margin-top: 7px;
+  line-height: 46px;
+}
+
+.loginForm {
+  width: 300px;
+}
+
+.loginFormForgotRight {
+  float: right;
+}
+
+.loginFormForgot {
+  float: left;
+}
+
+.loginFormButton {
+  width: 100%;
+}
+
+.icon {
+  line-height: 32px;
+  margin: 8px;
+}
+
+.input {
+  float: right;
+}

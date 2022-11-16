@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
-import styleImport from 'vite-plugin-style-import';
 import path from 'path';
-// https://vitejs.dev/config/
+
 import Components from 'unplugin-vue-components/vite'
 import {
   AntDesignVueResolver,
@@ -25,6 +24,7 @@ export default defineConfig({
       // 别名
       '@': path.resolve(__dirname, 'src'),
     },
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
   css: {
     preprocessorOptions: {
@@ -39,7 +39,12 @@ export default defineConfig({
       },
     },
   },
-
+  server: {
+    port: 3000,
+    proxy: {
+      '/api':'http://testapi.xuexiluxian.cn'
+    }
+  },
   plugins: [
     vue(),
     vueJsx({
@@ -49,18 +54,7 @@ export default defineConfig({
     Components({
       resolvers: [AntDesignVueResolver()],
     }),
-    // styleImport({
-    //   libs: [
-    //     {
-    //       libraryName: 'ant-design-vue',
-    //       esModule: true,
-    //       resolveStyle: (name) => {
-    //         return `ant-design-vue/es/${name}/style/index`;
-    //       },
-    //     },
-    //   ],
-    // }),
+
 
   ],
-
 })
