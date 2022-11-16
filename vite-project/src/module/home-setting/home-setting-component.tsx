@@ -1,10 +1,9 @@
 import { Carousel, Breadcrumb, Image } from "ant-design-vue";
-import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
-import { defineComponent, render } from "vue";
-import style from './home-setting-component.module.css'
-import lyCarousel from '../../assets/lyCarousel.png'
-
+import { defineComponent, onBeforeMount, ref } from "vue";
+import style from './home-setting-component.module.css';
+import lyCarousel from '../../assets/lyCarousel.png';
 import { getSliders } from "@/service/home-service";
+
 export const HomeSetting = defineComponent({
   setup() {
     return () => {
@@ -25,22 +24,26 @@ export const HomeSetting = defineComponent({
 // 轮播图
 export const CarouselSetting = defineComponent({
   setup() {
-    return async () => {
-      const imgUrl = (await getSliders()).data.list
+    let imgurl = ref([])
+    onBeforeMount(() => {
+      getSliders().then(res => {
+        console.log(res);
+        
+        imgurl.value = res.data.list
+      })
+    })
+    return () => {
       return (
         <Carousel
-          Carousel
+          // Carousel
           autoplay
           class={style.carousel}
           adaptiveHeight
           arrows
-          mode={imgUrl}
+          mode={imgurl}
         >
-          <div>
-            <img src={lyCarousel} alt="" class={style.imgCarousel} />
-          </div>
           {
-            imgUrl.map((item) => {
+            imgurl.value.map((item) => {
               console.log(item.imageUrl);
               return (
                 <div>
