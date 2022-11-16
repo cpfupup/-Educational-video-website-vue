@@ -1,8 +1,7 @@
 import { Carousel, Breadcrumb, Image } from "ant-design-vue";
 import { defineComponent, onBeforeMount, ref } from "vue";
 import style from './home-setting-component.module.css';
-import lyCarousel from '../../assets/lyCarousel.png';
-import { getSliders } from "@/service/home-service";
+import { getHomeMessage } from './home-setting-component.ts'
 
 export const HomeSetting = defineComponent({
   setup() {
@@ -24,14 +23,7 @@ export const HomeSetting = defineComponent({
 // 轮播图
 export const CarouselSetting = defineComponent({
   setup() {
-    let imgurl = ref([])
-    onBeforeMount(() => {
-      getSliders().then(res => {
-        console.log(res);
-        
-        imgurl.value = res.data.list
-      })
-    })
+    const imgURL = getHomeMessage()
     return () => {
       return (
         <Carousel
@@ -40,14 +32,13 @@ export const CarouselSetting = defineComponent({
           class={style.carousel}
           adaptiveHeight
           arrows
-          mode={imgurl}
+          mode={imgURL}
         >
           {
-            imgurl.value.map((item) => {
-              console.log(item.imageUrl);
+            imgURL.value.map((item) => {
               return (
                 <div>
-                  <Image src={item.imageUrl} alt="" class={style.imgCarousel} />
+                  <img src={item.imageUrl} alt="" class={style.imgCarousel} />
                 </div>
               )
             })
