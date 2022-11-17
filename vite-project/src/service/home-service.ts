@@ -7,3 +7,12 @@ export function getSliders() {
     url: '/api/slider/getSliders',
   })
 }
+
+//请求主页课程接口
+export function getClass(data: object) {
+  return request({
+    url: '/api/course/mostNew',
+    method: 'post',
+    data
+  })
+}

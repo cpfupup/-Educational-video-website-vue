@@ -20,14 +20,13 @@ export const HomeSetting = defineComponent({
   }
 })
 
-// 轮播图
+// 轮播图， 后期根据需要更改数据
 export const CarouselSetting = defineComponent({
   setup() {
-    const imgURL = getHomeMessage()
+    const imgURL = getHomeMessage().imgurl
     return () => {
       return (
         <Carousel
-          // Carousel
           autoplay
           class={style.carousel}
           adaptiveHeight
@@ -49,7 +48,7 @@ export const CarouselSetting = defineComponent({
   }
 })
 
-//这里是课程列表，后期需要按照接口更改信息
+//课程列表，后期需要按照接口更改信息
 export const ClasslBreadcrumbSetting = defineComponent({
   setup() {
     return () => {
@@ -153,146 +152,30 @@ export const ClasslBreadcrumbSetting = defineComponent({
   }
 })
 
-// 视频展示
+// 视频展示， 后期根据需要更改数据
+
 export const VideoShowSetting = defineComponent({
   setup() {
+    const classURL = getHomeMessage().classurl
     return () => {
-      const items = [
-        {
-          label: '视频学习',
-          key: 'item-1',
-          children: [//这里需要mock一下后期需要后端返回
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-            {
-              metaTitle: "Card title",
-              metaDescription: "This is the description",
-              avatarSrc: "https://joeschmoe.io/api/v1/random",
-              settingKey: 'setting',
-              editKey: 'edit',
-              ellipsisKey: 'ellipsis',
-              imgAlt: 'example',
-              imgSrc: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-            },
-
-          ],
-        }
-      ];
       return (
-        //这里后期应当交给后端返回数据进行渲染
-        <div model={items} >
+        <div mode={classURL} >
+          <h1>最新视频</h1>
           {
-            items.map(item => {
+            classURL.value.map(item => {
               return (
-                <>
-                  <h1>{item.label}</h1>
-                  {
-                    item.children.map(items => {
-                      return (
-                        <a-card hoverable style="width: 19%" class={style.card}>
-                          <img
-                            class={style.cardImg}
-                            alt={items.imgAlt}
-                            src={items.imgSrc}
-                          />
-                          <setting-outlined key={items.settingKey} />
-                          <edit-outlined key="edit" />
-                          <ellipsis-outlined key="ellipsis" />
-                          <a-card-meta title="Card title" description="This is the description">
-                          </a-card-meta>
-                        </a-card>
-                      )
-                    })
-                  }
-                </>
+                <a-card hoverable style="width: 19%" class={style.card}>
+                  <img
+                    class={style.cardImg}
+                    alt={item.imgAlt}
+                    src={item.courseCover}
+                  />
+                  <setting-outlined key={item.settingKey} />
+                  <edit-outlined key="edit" />
+                  <ellipsis-outlined key="ellipsis" />
+                  <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName}>
+                  </a-card-meta>
+                </a-card>
               )
             })
           }
