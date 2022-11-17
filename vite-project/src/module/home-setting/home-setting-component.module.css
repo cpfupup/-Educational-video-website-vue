@@ -6,6 +6,7 @@ body {
   width: 80%;
   min-width: 1200px;
   margin: 1% auto;
+  background-color: black;
 }
 
 .informationDisplayColumn {
@@ -19,20 +20,8 @@ body {
   border-radius: 10px;
 }
 
-.contentStyle {
-  text-align: center;
-  height: 380px;
-  line-height: 160px;
-  background: #364d79;
-  overflow: hidden;
-  width: 100%;
-  color: white;
-}
-
 .carousel {
-  overflow: hidden;
   flex: 2;
-  float: right;
   overflow: hidden;
   border-radius: 0 10px 10px 0;
 }
@@ -53,7 +42,6 @@ body {
 .breadcrumbItem {
   white-space: nowrap;
   margin: 5% 3%;
-
 }
 
 .breadcrumbFirstItem {
@@ -62,6 +50,7 @@ body {
 
 .card {
   float: left;
+  height: auto;
   min-width: 150px;
   margin: 1% 0 0 1%;
 }

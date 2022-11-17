@@ -1,4 +1,4 @@
-import { Carousel, Breadcrumb, Image } from "ant-design-vue";
+import { Carousel, Breadcrumb, List } from "ant-design-vue";
 import { defineComponent, onBeforeMount, ref } from "vue";
 import style from './home-setting-component.module.css';
 import { getHomeMessage } from './home-setting-component.ts'
@@ -8,13 +8,12 @@ export const HomeSetting = defineComponent({
     return () => {
       return (
         <div class={style.home} >
-          <div class={style.informationDisplayColumn}>
+          <div class={style.informationDisplayColumn} >
             <ClasslBreadcrumbSetting />
             <CarouselSetting />
           </div>
           <VideoShowSetting />
         </div>
-
       )
     }
   }
@@ -164,7 +163,8 @@ export const VideoShowSetting = defineComponent({
           {
             classURL.value.map(item => {
               return (
-                <a-card hoverable style="width: 19%" class={style.card}>
+
+                <List grid={{ gutter: 16, column: 4 }} class={style.card}>
                   <img
                     class={style.cardImg}
                     alt={item.imgAlt}
@@ -175,7 +175,7 @@ export const VideoShowSetting = defineComponent({
                   <ellipsis-outlined key="ellipsis" />
                   <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName} class={style.courseName}>
                   </a-card-meta>
-                </a-card>
+                </List>
               )
             })
           }
