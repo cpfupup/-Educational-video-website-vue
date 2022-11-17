@@ -173,7 +173,7 @@ export const VideoShowSetting = defineComponent({
                   <setting-outlined key={item.settingKey} />
                   <edit-outlined key="edit" />
                   <ellipsis-outlined key="ellipsis" />
-                  <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName}>
+                  <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName} class={style.courseName}>
                   </a-card-meta>
                 </a-card>
               )

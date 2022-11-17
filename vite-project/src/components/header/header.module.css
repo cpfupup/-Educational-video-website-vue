@@ -10,7 +10,8 @@
 .header {
     height: 100%;
     margin: 0 auto;
-    width: 1200px;
+    width: 80%;
+    min-width: 1200px;
     background-color: white;
 
 }
