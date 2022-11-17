@@ -3,9 +3,9 @@ body {
 }
 
 .home {
-  width: 1200px;
+  width: 80%;
+  min-width: 1200px;
   margin: 1% auto;
-  
 }
 
 .informationDisplayColumn {
@@ -16,7 +16,7 @@ body {
   height: 380px;
   box-shadow: 0px 12px 20px 0px rgba(195, 194, 194, 0.8);
   overflow: hidden;
-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .contentStyle {
@@ -34,7 +34,7 @@ border-radius: 10px;
   flex: 2;
   float: right;
   overflow: hidden;
-  border-radius:  0 10px 10px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 .imgCarousel {
@@ -67,5 +67,7 @@ border-radius: 10px;
 }
 
 .cardImg {
-  width: 100%
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
