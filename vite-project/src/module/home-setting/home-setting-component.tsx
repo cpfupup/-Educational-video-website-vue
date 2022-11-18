@@ -1,4 +1,4 @@
-import { Carousel, Breadcrumb, List } from "ant-design-vue";
+import { Carousel, Breadcrumb, Image } from "ant-design-vue";
 import { defineComponent, onBeforeMount, ref } from "vue";
 import style from './home-setting-component.module.css';
 import { getHomeMessage } from './home-setting-component.ts'
@@ -122,8 +122,6 @@ export const ClasslBreadcrumbSetting = defineComponent({
           ],
         },
       ];
-
-
       return (
         <div class={style.breadcrumb} model={items}>
           {
@@ -152,19 +150,17 @@ export const ClasslBreadcrumbSetting = defineComponent({
 })
 
 // 视频展示， 后期根据需要更改数据
-
 export const VideoShowSetting = defineComponent({
   setup() {
     const classURL = getHomeMessage().classurl
     return () => {
       return (
-        <div mode={classURL} >
+        <div mode={classURL} class={style.classShow}>
           <h1>最新视频</h1>
           {
             classURL.value.map(item => {
               return (
-
-                <List grid={{ gutter: 16, column: 4 }} class={style.card}>
+                <a-card hoverable style="width: 18%" class={style.card}>
                   <img
                     class={style.cardImg}
                     alt={item.imgAlt}
@@ -175,7 +171,7 @@ export const VideoShowSetting = defineComponent({
                   <ellipsis-outlined key="ellipsis" />
                   <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName} class={style.courseName}>
                   </a-card-meta>
-                </List>
+                </a-card>
               )
             })
           }

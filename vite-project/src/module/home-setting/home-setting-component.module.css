@@ -5,9 +5,7 @@ body {
 .home {
   width: 80%;
   min-width: 1200px;
-  margin: 1% auto;
-  background-color: black;
-}
+  margin: 1% auto;}
 
 .informationDisplayColumn {
   width: 100%;
@@ -49,10 +47,10 @@ body {
 }
 
 .card {
-  float: left;
+  display: inline-block;
   height: auto;
   min-width: 150px;
-  margin: 1% 0 0 1%;
+  margin: 1% 1% 0 1%;
 }
 
 .cardImg {
