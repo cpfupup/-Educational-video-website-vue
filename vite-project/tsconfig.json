@@ -9,6 +9,7 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": [
       "ESNext",
@@ -17,14 +18,17 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"] // 相对位置需要配置baseUrl才能识别，否则会报错
+      "@/*": [
+        "src/*"
+      ] // 相对位置需要配置baseUrl才能识别，否则会报错
     }
   },
   "include": [
+    "src/**/*.tsx",
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/**/*.tsx"
   ],
   "references": [
     {
