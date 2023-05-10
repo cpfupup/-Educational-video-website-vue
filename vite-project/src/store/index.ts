@@ -1,17 +1,9 @@
-import { createStore } from "vuex"
-import home from "./home";
-import login from "./login"
+import { createPinia } from 'pinia'
+import piniaPluginPerPersist from 'pinia-plugin-persist'
+
 
 // 此处和router类似
-const store = createStore({
-    state: {},
-    getters: {},
-    mutations: {},
-    actions: {},
-    modules: {
-        home,
-        login
-    }
-})
+const store = createPinia()
+store.use(piniaPluginPerPersist)
 
 export default store
