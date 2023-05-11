@@ -123,7 +123,7 @@ export const ClasslBreadcrumbSetting = defineComponent({
         },
       ];
       return (
-        <div class={style.breadcrumb} model={items}>
+        <div class={style.breadcrumb} routers={items}>
           {
             items.map(item => {
               return (

@@ -11,7 +11,7 @@ export const getHomeMessage = () => {
     })
     getClass({
       pageNum:1,
-      pageSize:15,
+      pageSize:16,
     }).then(res => {
       classurl.value = res.data.pageInfo.list
     })
