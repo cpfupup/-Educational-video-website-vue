@@ -160,20 +160,24 @@ export const VideoShowSetting = defineComponent({
         <div mode={classURL} >
           <h1>最新视频</h1>
           <div class={style.cardShow} >
-
             {
               classURL.value.map(item => {
                 return (
-                  <a-card hoverable style="width: 18%" class={style.card}>
-                    <img
-                      class={style.cardImg}
-                      alt={item.imgAlt}
-                      src={item.courseCover}
-                    />
+                  <a-card
+                    hoverable
+                    style="width: 18%"
+                    class={style.card}
+                    cover={
+                      <img
+                        class={style.cardImg}
+                        alt={item.imgAlt}
+                        src={item.courseCover}
+                      />
+                    }>
                     <setting-outlined key={item.settingKey} />
                     <edit-outlined key="edit" />
                     <ellipsis-outlined key="ellipsis" />
-                    <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName} class={style.courseName}>
+                    <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName}>
                     </a-card-meta>
                   </a-card>
                 )
