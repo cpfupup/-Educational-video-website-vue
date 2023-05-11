@@ -1,8 +1,8 @@
 //conmonents里面的组件一般用来存放公共组件
 import { defineComponent, ref } from 'vue';
 import { Menu, Avatar, Input, AutoComplete } from 'ant-design-vue';
-import { LoginSetting } from '../login/login.tsx';
-import { getMenuSettingController } from './header.ts'
+import { LoginSetting } from '../login/login-component';
+import { getMenuSettingController } from './header-controller'
 import lylogo from '../../assets/ly.png'
 import style from './header.module.css'
 

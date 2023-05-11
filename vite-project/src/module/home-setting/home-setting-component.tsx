@@ -1,7 +1,7 @@
 import { Carousel, Breadcrumb, Image } from "ant-design-vue";
 import { defineComponent, onBeforeMount, ref } from "vue";
 import style from './home-setting-component.module.css';
-import { getHomeMessage } from './home-setting-component.ts'
+import { getHomeMessage } from './home-setting-controller'
 
 export const HomeSetting = defineComponent({
   setup() {
@@ -153,28 +153,33 @@ export const ClasslBreadcrumbSetting = defineComponent({
 export const VideoShowSetting = defineComponent({
   setup() {
     const classURL = getHomeMessage().classurl
+    console.log(classURL);
+
     return () => {
       return (
-        <div mode={classURL} class={style.classShow}>
+        <div mode={classURL} >
           <h1>最新视频</h1>
-          {
-            classURL.value.map(item => {
-              return (
-                <a-card hoverable style="width: 18%" class={style.card}>
-                  <img
-                    class={style.cardImg}
-                    alt={item.imgAlt}
-                    src={item.courseCover}
-                  />
-                  <setting-outlined key={item.settingKey} />
-                  <edit-outlined key="edit" />
-                  <ellipsis-outlined key="ellipsis" />
-                  <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName} class={style.courseName}>
-                  </a-card-meta>
-                </a-card>
-              )
-            })
-          }
+          <div class={style.cardShow} >
+
+            {
+              classURL.value.map(item => {
+                return (
+                  <a-card hoverable style="width: 18%" class={style.card}>
+                    <img
+                      class={style.cardImg}
+                      alt={item.imgAlt}
+                      src={item.courseCover}
+                    />
+                    <setting-outlined key={item.settingKey} />
+                    <edit-outlined key="edit" />
+                    <ellipsis-outlined key="ellipsis" />
+                    <a-card-meta title={item.courseName} description={'作者：' + item.lecturerName} class={style.courseName}>
+                    </a-card-meta>
+                  </a-card>
+                )
+              })
+            }
+          </div>
         </div>
       )
     }

@@ -3,7 +3,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 
 import { defineComponent, ref } from "vue";
 import style from './login.module.css'
-import { useLoginController } from './login.ts'
+import { useLoginController } from './login.js'
 import { routerViewLocationKey } from "vue-router";
 export const LoginSetting = defineComponent({
   render() {

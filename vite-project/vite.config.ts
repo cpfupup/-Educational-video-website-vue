@@ -24,7 +24,7 @@ export default defineConfig({
       // 别名
       '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+    extensions: ['.mjs', '.tsx', '.js', '.ts', '.jsx', '.json']
   },
   css: {
     preprocessorOptions: {
@@ -42,7 +42,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api':'http://testapi.xuexiluxian.cn'
+      '/api': 'http://testapi.xuexiluxian.cn'
     }
   },
   plugins: [
