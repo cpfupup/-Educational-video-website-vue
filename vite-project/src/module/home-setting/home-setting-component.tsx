@@ -23,6 +23,7 @@ export const HomeSetting = defineComponent({
 export const CarouselSetting = defineComponent({
   setup() {
     const imgURL = getHomeMessage().imgurl
+    console.log(imgURL)
     return () => {
       return (
         <Carousel
@@ -30,7 +31,6 @@ export const CarouselSetting = defineComponent({
           class={style.carousel}
           adaptiveHeight
           arrows
-          mode={imgURL}
         >
           {
             imgURL.value.map((item) => {
@@ -153,7 +153,7 @@ export const ClasslBreadcrumbSetting = defineComponent({
 export const VideoShowSetting = defineComponent({
   setup() {
     const classURL = getHomeMessage().classurl
-    console.log(classURL);
+    // console.log(classURL);
 
     return () => {
       return (
