@@ -2,8 +2,8 @@ import { getSliders, getClass } from "@/service/home-service";
 import { onBeforeMount, ref } from "vue";
 
 //轮播图的数据处理
-let imgurl = ref([])
-let classurl = ref([])
+let imgurl = ref<string[]>([])
+let classurl = ref<string[]>([])
 export const getHomeMessage = () => {
   onBeforeMount(() => {
     getSliders().then(res => {
